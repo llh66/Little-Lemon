@@ -14,6 +14,11 @@
 		768635482C73D7B90000FF96 /* Little_LemonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768635472C73D7B90000FF96 /* Little_LemonApp.swift */; };
 		7686354C2C73D7BB0000FF96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7686354B2C73D7BB0000FF96 /* Assets.xcassets */; };
 		7686354F2C73D7BB0000FF96 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7686354E2C73D7BB0000FF96 /* Preview Assets.xcassets */; };
+		769ED8802C75143700A16A09 /* FetchedObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769ED87E2C75143700A16A09 /* FetchedObjects.swift */; };
+		769ED8812C75143700A16A09 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769ED87F2C75143700A16A09 /* Persistence.swift */; };
+		769ED8832C751AB200A16A09 /* MenuList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769ED8822C751AB200A16A09 /* MenuList.swift */; };
+		769ED8852C751ABE00A16A09 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769ED8842C751ABE00A16A09 /* MenuItem.swift */; };
+		769ED8882C7526EA00A16A09 /* ExampleDatabase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 769ED8862C7526EA00A16A09 /* ExampleDatabase.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +30,11 @@
 		768635472C73D7B90000FF96 /* Little_LemonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Little_LemonApp.swift; sourceTree = "<group>"; };
 		7686354B2C73D7BB0000FF96 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7686354E2C73D7BB0000FF96 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		769ED87E2C75143700A16A09 /* FetchedObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedObjects.swift; sourceTree = "<group>"; };
+		769ED87F2C75143700A16A09 /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		769ED8822C751AB200A16A09 /* MenuList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuList.swift; sourceTree = "<group>"; };
+		769ED8842C751ABE00A16A09 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
+		769ED8872C7526EA00A16A09 /* ExampleDatabase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ExampleDatabase.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +72,11 @@
 				767848132C743C760010BCD3 /* UserProfile.swift */,
 				7678480F2C7437DA0010BCD3 /* Home.swift */,
 				767848112C7438150010BCD3 /* Menu.swift */,
+				769ED8862C7526EA00A16A09 /* ExampleDatabase.xcdatamodeld */,
+				769ED87E2C75143700A16A09 /* FetchedObjects.swift */,
+				769ED8822C751AB200A16A09 /* MenuList.swift */,
+				769ED8842C751ABE00A16A09 /* MenuItem.swift */,
+				769ED87F2C75143700A16A09 /* Persistence.swift */,
 				7686354B2C73D7BB0000FF96 /* Assets.xcassets */,
 				7686354D2C73D7BB0000FF96 /* Preview Content */,
 			);
@@ -148,7 +163,12 @@
 			files = (
 				7678480E2C73F11F0010BCD3 /* Onboarding.swift in Sources */,
 				767848102C7437DA0010BCD3 /* Home.swift in Sources */,
+				769ED8832C751AB200A16A09 /* MenuList.swift in Sources */,
+				769ED8802C75143700A16A09 /* FetchedObjects.swift in Sources */,
+				769ED8812C75143700A16A09 /* Persistence.swift in Sources */,
+				769ED8882C7526EA00A16A09 /* ExampleDatabase.xcdatamodeld in Sources */,
 				767848142C743C760010BCD3 /* UserProfile.swift in Sources */,
+				769ED8852C751ABE00A16A09 /* MenuItem.swift in Sources */,
 				767848122C7438150010BCD3 /* Menu.swift in Sources */,
 				768635482C73D7B90000FF96 /* Little_LemonApp.swift in Sources */,
 			);
@@ -354,6 +374,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		769ED8862C7526EA00A16A09 /* ExampleDatabase.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				769ED8872C7526EA00A16A09 /* ExampleDatabase.xcdatamodel */,
+			);
+			currentVersion = 769ED8872C7526EA00A16A09 /* ExampleDatabase.xcdatamodel */;
+			name = ExampleDatabase.xcdatamodeld;
+			path = "/Users/llh/Desktop/Coursera/Course 11/Little Lemon/Little Lemon/ExampleDatabase.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 7686353C2C73D7B90000FF96 /* Project object */;
 }
