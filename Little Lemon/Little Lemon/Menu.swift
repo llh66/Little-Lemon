@@ -24,24 +24,24 @@ struct Menu: View {
     
     var body: some View {
         VStack {
-            ZStack {
+//            ZStack {
                 Image("littleLemonLogo")
                     .resizable()
                     .aspectRatio( contentMode: .fit)
                     .frame(maxHeight: 50)
-                HStack {
-                    Spacer()
-                    NavigationLink(destination: UserProfile()
-                        .navigationBarHidden(true)) {
-                        Image("profile_placeholder")
-                            .resizable()
-                            .aspectRatio( contentMode: .fit)
-                            .frame(maxHeight: 50)
-                            .clipShape(Circle())
-                            .padding(.trailing)
-                    }
-                }
-            }
+//                HStack {
+//                    Spacer()
+////                    NavigationLink(destination: UserProfile()
+////                        .navigationBarHidden(true)) {
+//                    Image("profile_placeholder")
+//                        .resizable()
+//                        .aspectRatio( contentMode: .fit)
+//                        .frame(maxHeight: 50)
+//                        .clipShape(Circle())
+//                        .padding(.trailing)
+////                    }
+//                }
+//            }
             VStack {
                 if !isKeyboardVisible {
                     withAnimation() {
