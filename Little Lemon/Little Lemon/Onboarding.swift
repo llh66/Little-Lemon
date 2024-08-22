@@ -11,71 +11,75 @@ let kFirstName = "first name key"
 let kLastName = "last name key"
 let kEmail = "email key"
 
+let kOrderStatuses = "order statuses key"
+let kPasswordChanges = "password changes key"
+let kSpecialOffers = "special offers key"
+let kNewsletter = "news letter key"
+
 let kIsLoggedIn = "kIsLoggedIn"
 
 struct Onboarding: View {
     
+    @StateObject private var viewModel = ViewModel()
+    
     @State var isLoggedIn = false
+    
+    @State var isError = false
+    @State var errorMessage = ""
     
     @State var firstName: String = ""
     @State var lastName: String = ""
     @State var email: String = ""
     
-    @State var isError = false
-    @State var errorMessage = ""
-    
     var body: some View {
         NavigationView {
-            VStack (alignment: .center) {
-                NavigationLink(destination: Home(), isActive: $isLoggedIn)
-                {
-                    EmptyView()
-                }
-                TextField("First name", text: $firstName)
-                TextField("Last name", text: $lastName)
-                TextField("Email", text: $email)
-                Button(action: {
-                    if !firstName.isEmpty && !lastName.isEmpty && !email.isEmpty {
-                        if isValidEmail(email) {
-                            UserDefaults.standard.set(firstName, forKey: kFirstName)
-                            UserDefaults.standard.set(lastName, forKey: kLastName)
-                            UserDefaults.standard.set(email, forKey: kEmail)
+            ScrollView {
+                VStack (alignment: .center) {
+                    NavigationLink(destination: Home(), isActive: $isLoggedIn)
+                    {
+                        EmptyView()
+                    }
+                    Image("littleLemonLogo")
+                        .resizable()
+                        .aspectRatio( contentMode: .fit)
+                        .frame(maxHeight: 50)
+                    Hero()
+                        .padding(.bottom)
+                        .background(Color.primaryColor1)
+                    VStack (alignment: .leading) {
+                        Text("\nFirst name *")
+                        TextField("First name", text: $firstName)
+                        Text("\nLast name *")
+                        TextField("Last name", text: $lastName)
+                        Text("\nEmail *")
+                        TextField("Email", text: $email)
+                            .keyboardType(.emailAddress)
+                    }
+                    .padding()
+                    Button(action: {
+                        (isError, errorMessage) = viewModel.isValidInputs(firstName: firstName, lastName: lastName, email: email)
+                        if !isError {
                             UserDefaults.standard.set(true, forKey: kIsLoggedIn)
                             isLoggedIn.toggle()
                         }
-                        else {
-                            errorMessage = "Please enter a valid email."
-                            isError.toggle()
-                        }
-                    }
-                    else {
-                        errorMessage = "Please enter all fields."
-                        isError.toggle()
-                    }
-                }, label: {
-                    Text("Register")
+                    }, label: {
+                        Text("Register")
+                    })
+                    .padding()
+                    .buttonStyle(.borderedProminent)
+                    .tint(.primaryColor1)
+                }
+                .textFieldStyle(.roundedBorder)
+                .alert(isPresented: $isError, content: {
+                    Alert(title: Text("Error"), message: Text(errorMessage))
                 })
-                .padding()
-                .buttonStyle(.borderedProminent)
-            }
-            .padding()
-            .textFieldStyle(.roundedBorder)
-            .alert(isPresented: $isError, content: {
-                Alert(title: Text("Error"), message: Text(errorMessage))
-            })
-            .onAppear() {
-                if UserDefaults.standard.bool(forKey: kIsLoggedIn) {
-                    isLoggedIn = true
+                .onAppear() {
+                    if UserDefaults.standard.bool(forKey: kIsLoggedIn) {
+                        isLoggedIn = true
+                    }
                 }
             }
         }
-        }
-    
-    func isValidEmail(_ email: String) -> Bool {
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-
-        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        return emailPred.evaluate(with: email)
     }
     
 }
